@@ -1,4 +1,4 @@
 package CodingExercise40;
 
-public class DeluxBurger {
+public class DeluxeBurger {
 }
