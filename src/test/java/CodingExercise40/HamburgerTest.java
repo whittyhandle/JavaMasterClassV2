@@ -7,6 +7,5 @@ class HamburgerTest {
 
     @Test
     void itemizehamburger() {
-
     }
 }

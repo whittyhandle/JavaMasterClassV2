@@ -9,6 +9,8 @@ class RuleTest {
     @Test
     void populateRule() {
         Rule rule = new Rule();
-        rule.populateRule("10110011");
+        rule.populateRule("1111111");
+        rule.printRule();
+
     }
 }
