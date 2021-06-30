@@ -2,16 +2,23 @@ package CellularAutomaton;
 
 public class Rule {
 
-    int[] rule;
+    String[] rule;
 
     public Rule() {
-        this.rule = new int[7];
+        this.rule = new String[7];
     }
 
-    void populateRule(String binaryNumber) {
+    public void populateRule(String binaryNumber) {
         for (int i = 0; i < binaryNumber.length(); i++) {
-            char x = binaryNumber.charAt(i);
-            rule[i] = x;
+            String x = String.valueOf(binaryNumber.charAt(i));
+            this.rule[i] = x;
+        }
+    }
+
+    public void printRule() {
+        System.out.println(rule.length);
+        for (String rule : this.rule) {
+            System.out.print(rule);
         }
     }
 }
