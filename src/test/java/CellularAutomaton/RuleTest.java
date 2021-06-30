@@ -11,5 +11,6 @@ class RuleTest {
         Rule rule = new Rule();
         rule.populateRule("1111111");
         rule.printRule();
+
     }
 }

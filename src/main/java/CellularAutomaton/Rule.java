@@ -19,6 +19,7 @@ public class Rule {
         System.out.println(rule.length);
         for (String rule : this.rule) {
             System.out.print(rule);
+
         }
     }
 }
