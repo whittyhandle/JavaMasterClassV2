@@ -20,6 +20,5 @@ class HamburgerTest {
         hamburger.addHamburgerAddition4("testOption4", 0.4);
 
         assertEquals(2.0, hamburger.itemizeHamburger());
-
     }
 }
