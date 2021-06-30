@@ -14,8 +14,7 @@ public class Hamburger {
     double addition2Price;
     double addition3Price;
     double addition4Price;
-
-
+    
     public Hamburger(String name, String meat, double price, String beadRollType) {
         this.name = name;
         this.meat = meat;
