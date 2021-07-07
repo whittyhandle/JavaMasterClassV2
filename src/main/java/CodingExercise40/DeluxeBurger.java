@@ -3,7 +3,7 @@ package CodingExercise40;
 public class DeluxeBurger extends Hamburger{
 
     public DeluxeBurger() {
-        super("DeluxeBurger", "Beef", 15.0, "Bread");
+        super("Deluxe Burger", "Beef", 15.0, "Deluxe Bread");
         addHamburgerAddition1("Chips", 2.0);
         addHamburgerAddition2("drink", 2.10);
     }
