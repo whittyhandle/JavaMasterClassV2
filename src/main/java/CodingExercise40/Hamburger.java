@@ -5,7 +5,7 @@ public class Hamburger {
     String name;
     String meat;
     double price;
-    String breadRollType;
+    String beadRollType;
     String addition1Name;
     String addition2Name;
     String addition3Name;
@@ -19,7 +19,7 @@ public class Hamburger {
         this.name = name;
         this.meat = meat;
         this.price = price;
-        this.breadRollType = breadRollType;
+        this.beadRollType = beadRollType;
     }
 
     public void addHamburgerAddition1(String addition1Name, double addition1Price) {
@@ -41,7 +41,7 @@ public class Hamburger {
 
     public double itemizeHamburger() {
         double hamburgerPrice = this.price;
-        System.out.println(this.name + " hamburger on a " + this.breadRollType + " roll with " + this.meat + ", for " + this.price);
+        System.out.println(this.name + " hamburger on a " + this.beadRollType + " roll with " + this.meat + ", for " + this.price);
 
         if (this.addition1Name != null) {
             hamburgerPrice += this.addition1Price;

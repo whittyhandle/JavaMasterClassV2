@@ -2,10 +2,10 @@ package CellularAutomaton;
 
 public class Rule {
 
-    String[] rule;
+    String rule[];
 
     public Rule() {
-        this.rule = new String[7];
+        this.rule = new String[8];
     }
 
     public void populateRule(String binaryNumber) {
@@ -19,7 +19,6 @@ public class Rule {
         System.out.println(rule.length);
         for (String rule : this.rule) {
             System.out.print(rule);
-
         }
     }
 }
