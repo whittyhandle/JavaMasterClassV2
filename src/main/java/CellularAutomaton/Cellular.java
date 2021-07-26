@@ -28,14 +28,36 @@ public class Cellular {
         return currentGeneration;
     }
 
-    //todo populate next gen
     public int[] populateNextGen(int stepCount) {
+        for (int i = 1; i < currentGeneration.length - 1; i++) {
+            int nMinusOne = currentGeneration[i -1];
+            int n = currentGeneration[i];
+            int nPlusOne = currentGeneration[i +1];
+            System.out.println(nMinusOne + " " + n + " " + nPlusOne);
+            if (nMinusOne == 0 && n == 0 && nPlusOne == 0) nextGeneration[i] = 1; //000
 
-        for (int i = 0; i < stepCount; i++) {
+            if (nMinusOne == 0 && n == 0 && nPlusOne == 1) nextGeneration[i] = 1; //001
+
+            if (nMinusOne == 0 && n == 1 && nPlusOne == 0) nextGeneration[i] = 1; //010
+
+            if (nMinusOne == 0 && n == 1 && nPlusOne == 1) nextGeneration[i] = 1; //011
+
+            if (nMinusOne == 1 && n == 0 && nPlusOne == 0) nextGeneration[i] = 1; //100
+
+            if (nMinusOne == 1 && n == 0 && nPlusOne == 1) nextGeneration[i] = 0; //101
+
+            if (nMinusOne == 1 && n == 1 && nPlusOne == 0) nextGeneration[i] = 0; //110
+
+            if (nMinusOne == 1 && n == 1 && nPlusOne == 1) nextGeneration[i] = 0; //111
 
         }
+        return nextGeneration;
+    }
 
-        return null;
+    public void printNextGen() {
+        for (int i : nextGeneration) {
+            System.out.print(i);
+        }
     }
 
 }

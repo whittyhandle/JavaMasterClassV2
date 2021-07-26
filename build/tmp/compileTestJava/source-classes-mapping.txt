@@ -1,0 +1,6 @@
+CodingExercise40/HealthyBurgerTest.java
+ CodingExercise40.HealthyBurgerTest
+CodingExercise40/HamburgerTest.java
+ CodingExercise40.HamburgerTest
+CellularAutomaton/RuleTest.java
+ CellularAutomaton.RuleTest

@@ -1,0 +1,17 @@
+CodingExercise40/HamburgerMenu.java
+ CodingExercise40.HamburgerMenu
+ CodingExercise40.InputMenu
+CodingExercise40/HealthyBurger.java
+ CodingExercise40.HealthyBurger
+CodingExercise40/Main.java
+ CodingExercise40.Main
+CodingExercise40/Hamburger.java
+ CodingExercise40.Hamburger
+CodingExercise40/DeluxeBurger.java
+ CodingExercise40.DeluxeBurger
+CellularAutomaton/Rule.java
+ CellularAutomaton.Rule
+CellularAutomaton/Cellular.java
+ CellularAutomaton.Cellular
+CellularAutomaton/Main.java
+ CellularAutomaton.Main
