@@ -9,16 +9,25 @@ public class Rule {
     }
 
     public void populateRule(String binaryNumber) {
-        for (int i = 0; i < binaryNumber.length(); i++) {
-            String x = String.valueOf(binaryNumber.charAt(i));
-            this.rule[i] = x;
+        try {
+            for (int i = 0; i < binaryNumber.length(); i++) {
+                this.rule[i] = String.valueOf(binaryNumber.charAt(i));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    public void printRule() {
+    public String[] getRule() {
+        return rule;
+    }
+
+    public boolean printRule() {
         System.out.println(rule.length);
         for (String rule : this.rule) {
             System.out.print(rule);
+            return true;
         }
+        return false;
     }
 }
