@@ -11,7 +11,7 @@ public class HealthyBurger extends Hamburger {
     double healthyExtra4Price;
 
     public HealthyBurger(String meat, double price) {
-        super("Healthy Burger", meat, price, "Healthy Bread");
+        super("Healthy Burger", meat, price, "Whole Wheat Bread");
     }
 
     public void addHealthyAddition1(String name, double price) {
@@ -35,8 +35,7 @@ public class HealthyBurger extends Hamburger {
     }
 
     @Override
-    public String itemizeHamburger() {
-        String total = "$" + super.price + healthyExtra1Price + healthyExtra2Price + healthyExtra3Price + healthyExtra4Price;
-        return total;
+    public double itemizeHamburger() {
+        return super.price + healthyExtra1Price + healthyExtra2Price + healthyExtra3Price + healthyExtra4Price;
     }
 }

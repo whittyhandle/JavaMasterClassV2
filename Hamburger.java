@@ -64,50 +64,43 @@ public class Hamburger {
         this.addition7Price = addition7Price;
     }
 
-    public String itemizeHamburger() {
+    public double itemizeHamburger() {
 
         double hamburgerPrice = this.price;
-        String summary = "";
-        String total = summary + hamburgerPrice;
 
         System.out.println(this.name + " hamburger on a " + this.beadRollType + " roll with " + this.meat + ", for " + this.price);
 
         if (this.addition1Name != null) {
             hamburgerPrice += this.addition1Price;
-            summary += "Added " + this.addition1Name + " for an extra " + this.addition1Price + "\n";
         }
 
         if (this.addition2Name != null) {
             hamburgerPrice += this.addition2Price;
-            System.out.println("Added " + this.addition2Name + " for an extra " + this.addition2Price + "\n");
         }
 
         if (this.addition3Name != null) {
             hamburgerPrice += this.addition3Price;
-            System.out.println("Added " + this.addition3Name + " for an extra " + this.addition3Price + "\n");
         }
 
         if (this.addition4Name != null) {
             hamburgerPrice += this.addition4Price;
-            summary += "Added " + this.addition4Name + " for an extra " + this.addition4Price + "\n";
         }
 
         if (this.addition5Name != null) {
             hamburgerPrice += this.addition5Price;
-            summary += "Added " + this.addition5Name + " for an extra " + this.addition5Price + "\n";
         }
 
         if (this.addition6Name != null) {
             hamburgerPrice += this.addition6Price;
-            summary += "Added " + this.addition6Name + " for an extra " + this.addition6Price + "\n";
         }
 
         if (this.addition7Name != null) {
             hamburgerPrice += this.addition7Price;
-            summary += "Added " + this.addition7Name + " for an extra " + this.addition7Price + "\n";
         }
 
-        return total;
+        hamburgerPrice = (Math.round(hamburgerPrice * 100.0)/100.0);
+
+        return hamburgerPrice;
 
     }
 
