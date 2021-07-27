@@ -83,29 +83,119 @@ public class GUI extends Thread implements ActionListener {
         frame.add(checkoutButton);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(width,height);
+        frame.setSize(width, height);
 
         checkoutButton.addActionListener(e -> {
-            if (basicCheckBox.isSelected()) {
-                Hamburger hamburger = new Hamburger("Basic", "Beef", 5.60, "Potato Roll");
 
-                if (tomatoCheckBox.isSelected()) {
-                    hamburger.addHamburgerAddition1(tomato, tomatoPrice);
-                }
-                hamburger.itemizeHamburger();
-                JOptionPane.showMessageDialog(frame, "hamburger.itemizeHamburger()" + hamburger.itemizeHamburger());
-            }
+            basicBurgerChoice();
 
-            if (healthyCheckBox.isSelected()) {
-                JOptionPane.showMessageDialog(frame, "healthy.itemizeHamburger()");
-            }
+            healthyBurgerChoice();
 
-            if (deluxeCheckBox.isSelected()) {
-                JOptionPane.showMessageDialog(frame, "deluxe.itemizeHamburger()");
-            }
+            deluxeBurgerChoice();
+
         });
 
 
+    }
+
+    private void basicBurgerChoice() {
+        String toppings = "\nToppings:";
+
+        if (basicCheckBox.isSelected()) {
+            hamburger = new Hamburger("Basic", "Beef", 5.60, "Potato Roll");
+
+            toppings = selectedItems(toppings);
+
+            if (!(toppings.equals("\nToppings:"))) {
+                JOptionPane.showMessageDialog(frame, "Total $" + hamburger.itemizeHamburger() + toppings);
+            } else {
+                JOptionPane.showMessageDialog(frame, "Total $" + hamburger.itemizeHamburger());
+            }
+
+        }
+    }
+
+
+
+    private void healthyBurgerChoice() {
+        String toppings = "\nToppings:";
+
+        if (healthyCheckBox.isSelected()) {
+            healthyBurger = new HealthyBurger("Turkey", 7.50);
+
+            toppings = selectedItems(toppings);
+
+            if (!(toppings.equals("\nToppings:"))) {
+                JOptionPane.showMessageDialog(frame, "Total $" + healthyBurger.itemizeHamburger() + toppings);
+            } else {
+                JOptionPane.showMessageDialog(frame, "Total $" + healthyBurger.itemizeHamburger());
+            }
+
+        }
+    }
+
+    private void deluxeBurgerChoice() {
+
+        if (deluxeCheckBox.isSelected()) {
+            deluxeBurger = new DeluxeBurger();
+
+            JOptionPane.showMessageDialog(frame, "Total $" + deluxeBurger.itemizeHamburger() +
+                    "\nIncludes:\n- " + deluxeBurger.addition1Name + " $" + deluxeBurger.addition1Price +
+                    "\n- " + deluxeBurger.addition2Name + " $" + deluxeBurger.addition2Price);
+
+        }
+    }
+
+    private String selectedItems(String toppings) {
+        if (!tomatoCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition1(null, 0);
+        } else {
+            hamburger.addHamburgerAddition1(tomato, tomatoPrice);
+            toppings += "\n-" + tomato + " $" + tomatoPrice;
+        }
+
+        if (!cheeseCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition2(null, 0);
+        } else {
+            hamburger.addHamburgerAddition2(cheese, cheesePrice);
+            toppings += "\n-" + cheese + " $" + cheesePrice;
+        }
+
+        if (!lettuceCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition3(null, 0);
+        } else {
+            hamburger.addHamburgerAddition3(lettuce, lettucePrice);
+            toppings += "\n-" + lettuce + " $" + lettucePrice;
+        }
+
+        if (!avocadoCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition4(null, 0);
+        } else {
+            hamburger.addHamburgerAddition4(avocado, avocadoPrice);
+            toppings += "\n-" + avocado + " $" + avocadoPrice;
+        }
+
+        if (!lentilsCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition5(null, 0);
+        } else {
+            hamburger.addHamburgerAddition5(lentils, lentilsPrice);
+            toppings += "\n-" + lentils + " $" + lentilsPrice;
+        }
+
+        if (!eggCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition6(null, 0);
+        } else {
+            hamburger.addHamburgerAddition6(egg, eggPrice);
+            toppings += "\n-" + egg + " $" + eggPrice;
+        }
+
+        if (!baconCheckBox.isSelected()) {
+            hamburger.addHamburgerAddition7(null, 0);
+        } else {
+            hamburger.addHamburgerAddition7(bacon, baconPrice);
+            toppings += "\n-" + bacon + " $" + baconPrice;
+        }
+        return toppings;
     }
 
     private void generatedBurgerTypeCheckboxes() {
@@ -198,6 +288,7 @@ public class GUI extends Thread implements ActionListener {
         baconCheckBox.setEnabled(false);
 
     }
+
     public static void main(String[] args) {
         new GUI();
     }
@@ -205,7 +296,7 @@ public class GUI extends Thread implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(basicCheckBox.isSelected()) {
+        if (basicCheckBox.isSelected()) {
 
             tomatoCheckBox.setEnabled(true);
             cheeseCheckBox.setEnabled(true);
@@ -217,7 +308,7 @@ public class GUI extends Thread implements ActionListener {
 
         }
 
-        if(healthyCheckBox.isSelected()) {
+        if (healthyCheckBox.isSelected()) {
 
             tomatoCheckBox.setEnabled(true);
             cheeseCheckBox.setEnabled(false);
@@ -227,7 +318,6 @@ public class GUI extends Thread implements ActionListener {
             eggCheckBox.setEnabled(false);
             baconCheckBox.setEnabled(false);
 
-            new HealthyBurger("Impossible Burger", 8.75);
         }
 
         if (deluxeCheckBox.isSelected()) {
@@ -239,8 +329,6 @@ public class GUI extends Thread implements ActionListener {
             lentilsCheckBox.setEnabled(false);
             eggCheckBox.setEnabled(false);
             baconCheckBox.setEnabled(false);
-
-            new DeluxeBurger();
 
         }
 
